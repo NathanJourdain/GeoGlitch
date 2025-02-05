@@ -168,4 +168,5 @@ Pour tester plus facilement la position GPS, vous pouvez modifier votre position
 
 
 ## Démo
-[Voir la démo](./doc/demo.mp4)
+https://github.com/user-attachments/assets/d5511b1e-468a-4a43-9c92-e3fb5202864e
+
