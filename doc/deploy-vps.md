@@ -99,7 +99,7 @@ c. Configuration de l'application
 Vérifiez et éditez le fichier de configuration (`frontend/modules/config.js`) afin de renseigner les variables nécessaires :
 ```env
 MAPBOX_ACCESS_TOKEN : Votre token Mapbox.
-WEB_SOCKET_URL : L’URL du serveur WebSocket (souvent http://votredomaine.com ou http://localhost:8080 selon le contexte).
+WEB_SOCKET_URL : L’URL du serveur WebSocket (souvent http://votredomaine.com ou http://localhost:3000 selon le contexte).
 ```
 
 d. Démarrage de l'application avec pm2
@@ -115,7 +115,7 @@ pm2 logs geoglitch
 ```
 
 ## 8. Configuration de Nginx en tant que Reverse Proxy
-Pour que votre application soit accessible via votre domaine ou IP publique, configurez Nginx pour rediriger les requêtes HTTP/HTTPS vers le port utilisé par votre application (ici, supposons le port 8080).
+Pour que votre application soit accessible via votre domaine ou IP publique, configurez Nginx pour rediriger les requêtes HTTP/HTTPS vers le port utilisé par votre application (ici, supposons le port 3000).
 
 Créer un fichier de configuration Nginx
 Créez un nouveau fichier, par exemple /etc/nginx/sites-available/geoglitch :
@@ -126,7 +126,7 @@ server {
     server_name votredomaine.com;  # Remplacez par votre nom de domaine ou utilisez l'IP publique
 
     location / {
-        proxy_pass http://localhost:8080;
+        proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
